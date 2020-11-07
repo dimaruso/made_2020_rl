@@ -126,7 +126,6 @@ class BlackjackEnv(gym.Env):
         print(f"dealer: {self.dealer}")
         print(f"usable_ace: {self.usable_ace(self.player)}")
 
-
     def draw_card(self):
         
         if len(self.deck3) <= 15: 
@@ -138,24 +137,19 @@ class BlackjackEnv(gym.Env):
 
         return card
 
-
     def draw_hand(self):
         return [self.draw_card(), self.draw_card()]
 
-
     def usable_ace(self, hand):  # Does this hand have a usable ace?
         return 1 in hand and sum(hand) + 10 <= 21
-
 
     def sum_hand(self, hand):  # Return current hand total
         if self.usable_ace(hand):
             return sum(hand) + 10
         return sum(hand)
 
-
     def is_bust(self, hand):  # Is this hand a bust?
         return self.sum_hand(hand) > 21
-
 
     def score(self, hand):  # What is the score of this hand (0 if bust)
         return 0 if self.is_bust(hand) else self.sum_hand(hand)

@@ -4,4 +4,4 @@
 
 ### Содержание
 
-1. [Black Jack](HW1)
+1. [Blackjack](HW1)
