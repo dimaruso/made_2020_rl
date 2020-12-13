@@ -5,3 +5,4 @@
 ### Содержание
 
 1. [Blackjack](HW1)
+2. [tic-tac-toe](HW2)
