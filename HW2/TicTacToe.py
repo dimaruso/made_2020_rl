@@ -92,7 +92,11 @@ class TicTacToe(gym.Env):
     
     def step(self, action):
         if self.board[action[0], action[1]] != 0:
-            return self.getState(), -10, True, {}
+            if self.curTurn == 1:
+                reward = -10
+            else:
+                reward = 10
+            return self.getState(), reward, True, {}
         self.makeMove(self.curTurn, action[0], action[1])
         reward = self.isTerminal()
         self.curTurn = -self.curTurn
